@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — Часто задаваемые вопросы</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #58a6ff, #bc8cff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #8b949e;
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+
+        .faq-section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            color: #58a6ff;
+            border-bottom: 1px solid #21262d;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+
+        .faq-item {
+            background: #161b22;
+            border: 1px solid #21262d;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+
+        .faq-item:hover {
+            border-color: #58a6ff44;
+        }
+
+        .faq-question {
+            padding: 16px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            user-select: none;
+        }
+
+        .faq-question::before {
+            content: 'Q';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            background: #58a6ff22;
+            color: #58a6ff;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .faq-question .text {
+            flex: 1;
+        }
+
+        .faq-question .arrow {
+            font-size: 0.8rem;
+            color: #8b949e;
+            transition: transform 0.3s;
+            margin-left: 12px;
+        }
+
+        .faq-item.open .faq-question .arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 20px 16px 58px;
+            color: #b1bac4;
+        }
+
+        .faq-answer-inner p {
+            margin-bottom: 8px;
+        }
+
+        .faq-answer-inner code {
+            background: #0d1117;
+            border: 1px solid #21262d;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #e6edf3;
+        }
+
+        .faq-answer-inner .highlight {
+            background: #1a1f29;
+            border-left: 3px solid #58a6ff;
+            padding: 10px 14px;
+            border-radius: 0 6px 6px 0;
+            margin: 10px 0;
+            font-size: 0.92em;
+        }
+
+        .faq-answer-inner ul {
+            padding-left: 18px;
+            margin-bottom: 8px;
+        }
+
+        .faq-answer-inner li {
+            margin-bottom: 4px;
+        }
+
+        .faq-answer-inner .note {
+            color: #d29922;
+            font-size: 0.9em;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 1000px;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .badge-important {
+            background: #da363422;
+            color: #f85149;
+            border: 1px solid #da363444;
+        }
+
+        .badge-info {
+            background: #58a6ff22;
+            color: #58a6ff;
+            border: 1px solid #58a6ff44;
+        }
+
+        footer {
+            text-align: center;
+            color: #484f58;
+            font-size: 0.8rem;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #21262d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FAQ</h1>
+        <p class="subtitle">Ответы на часто задаваемые вопросы. Перед тем как спрашивать — загляни сюда.</p>
+
+        <!-- Секция: Начало работы -->
+        <div class="faq-section">
+            <h2 class="section-title">Начало работы</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Что нужно для начала работы? <span class="badge badge-important">важно</span></span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Нужно отправить:</p>
+                        <ul>
+                            <li><strong>u_id</strong> аккаунта</li>
+                            <li><strong>Депозит на фьючах</strong> — минимум 20$</li>
+                            <li><strong>0% комиссия (0 fee)</strong> на фьючах — обязательно</li>
+                        </ul>
+                        <p class="note">Новореги НЕ подходят — только олд акки. API не нужен.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Как получить u_id аккаунта? <span class="badge badge-important">важно</span></span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <div class="highlight">
+                            <code>F12</code> &rarr; <code>Application</code> &rarr; <code>Cookies</code> &rarr; <code>mexc</code> &rarr; пролистать в самый низ &rarr; <code>u_id</code>
+                        </div>
+                        <p style="margin-top: 10px;">Если вкладки <code>Application</code> нет:</p>
+                        <div class="highlight">
+                            В верхней части DevTools нажмите значок <code>&gt;&gt;</code> &rarr; выберите <code>Application</code> &rarr; дальше по инструкции
+                        </div>
+                        <p class="note">u_id — это НЕ ваш никнейм и не номер телефона. Это числовой ID из куки.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Подойдёт ли акк с отрицательным PnL?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Да, именно акки с минусовым PnL берутся в отработку. Главное — наличие 0 fee и депозита на фьючах.</p>
+                        <p class="note">Учтите: акки с малеьнким минусом (например, -120$) дадут меньше профита.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Как строится процесс работы?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Переводите деп со спота на фьючи &rarr; отправляете u_id &rarr; акк ставится в работу &rarr; по итогу вам пишут результат и куда переводить долю. Ничего настраивать самому не надо.</p>
+                        <p style="margin-top: 8px;">Можно заходить на акк и проверять во время отработки. 2FA не мешает. Монеты на споте тоже не мешают.</p>
+                        <p class="note">Ссылки на Tronscan, историю транзакций и т.п. отправлять НЕ нужно.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Можно ли сдавать несколько акков сразу?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Да, можно крутить несколько акков одновременно.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Что делать между сессиями и когда можно торговать?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Между сессиями не торгуйте на акке. Торговать можно только после подтверждения, что отработка завершена.</p>
+                        <p class="note">Чтобы u_id не слетал между сессиями: откройте мини-сделку на эфире (изол. маржа, мин. размер) и держите до следующей сессии. Если ликвиднет — не страшно. Если u_id всё же сменился — отправьте новый.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Есть ли очередь на отработку?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Может быть. Обычно акк ставится в работу в течение нескольких часов.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Секция: Депозиты и суммы -->
+        <div class="faq-section">
+            <h2 class="section-title">Депозиты и суммы</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Депозиты, суммы и вывод <span class="badge badge-important">важно</span></span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p><strong>Сколько оставлять на фьючах?</strong></p>
+                        <p>Рекомендуется <strong>30–40$</strong> — так быстрее отфлипается. Минимум — 20$.</p>
+
+                        <p style="margin-top: 12px;"><strong>Минималка на депозит?</strong></p>
+                        <p>Фонд на минималку с учётом комиссии на вывод. Точные суммы зависят от сети и токена.</p>
+
+                        <p style="margin-top: 12px;"><strong>Какие сети для вывода?</strong></p>
+                        <div class="highlight">USDT: <strong>Plasma</strong>, <strong>BEP20</strong> или <strong>Arbitrum</strong></div>
+
+                        <p style="margin-top: 12px;"><strong>Куда выводить?</strong></p>
+                        <p>Можно на ту же биржу, с которой заводили (например, обратно на Bybit). Можно и на другую.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Секция: Профит и выплаты -->
+        <div class="faq-section">
+            <h2 class="section-title">Профит и выплаты</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Профит, сроки и условия <span class="badge badge-important">важно</span></span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p><strong>Как делится профит?</strong></p>
+                        <ul>
+                            <li>Вычитаете свой депозит (то, что завели изначально)</li>
+                            <li><strong>60%</strong> от остального отправляете на указанный адрес</li>
+                            <li>Остальные <strong>40%</strong> — ваш чистый профит</li>
+                        </ul>
+                        <div class="highlight">
+                            Адрес для выплат: <code style="word-break: break-all;">0x2a9f2ad1AA5C2391E88125e95a63fc6f5BBcD308</code><br>
+                            Сети: USDT Plasma / BEP20 / Arbitrum
+                        </div>
+
+                        <p style="margin-top: 12px;"><strong>Сколько в среднем получается?</strong></p>
+                        <p>От <strong>40% минуса</strong> до <strong>пары иксов сверху</strong>. Последние сессии давали профит всем участникам.</p>
+
+                        <p style="margin-top: 12px;"><strong>Сколько длится отработка?</strong></p>
+                        <p>От <strong>2 часов до суток</strong>, в зависимости от рыночных условий.</p>
+
+                        <p style="margin-top: 12px;"><strong>Это разовая акция?</strong></p>
+                        <p>Нет. Сессии проходят регулярно. После первого запуска — через несколько часов повторно.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Секция: KYC / Верификация -->
+        <div class="faq-section">
+            <h2 class="section-title">KYC / Верификация</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Прохождение KYC — документы, фразы, правила <span class="badge badge-important">важно</span></span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p><strong>Какие документы нужны:</strong></p>
+                        <ul>
+                            <li><strong>Выписка из банка</strong> или счёт на оплату счётчиков — чтобы был виден адрес проживания, выписан на человека, который проходил KYC</li>
+                            <li><strong>Скриншот двух последних транзакций</strong> с биржи, с которой пополнял MEXC — должно быть видно <strong>TXID</strong></li>
+                        </ul>
+
+                        <p style="margin-top: 12px;"><strong>Фраза про источник средств:</strong></p>
+                        <div class="highlight">
+                            Funds are sent from my personal account at [<strong>ваша биржа</strong>]. The deposit is for daily trading and long-term investment purposes on the MEXC platform.
+                        </div>
+                        <p class="note">Замените [Bybit] на биржу, с которой реально отправляли.</p>
+
+                        <p style="margin-top: 12px;"><strong>Место работы:</strong></p>
+                        <div class="highlight">i'm a crypto trader</div>
+
+                        <p style="margin-top: 12px;"><strong>Во время прохождения:</strong></p>
+                        <ul>
+                            <li><strong>Сайт НЕ обновлять!</strong> Если обновите — всё заново</li>
+                            <li>Панельку справа — только закрыть на крестик</li>
+                            <li>Страницу держать открытой, пока дроп проходит верификацию</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Секция: Разное -->
+        <div class="faq-section">
+            <h2 class="section-title">Разное</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Если на аккаунт наложат ограничения, деньги выведутся?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Сначала снимается ограничение, потом выводят. Деньги не пропадают.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Бывают ли проблемы или отказы в рассмотрении?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Нет, проблем и отказов не бывает.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Можно ли кидать депозиты с одного Bybit на разные MEXC-аккаунты?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Да, без разницы. Депо с одной биржи может идти на разные MEXC.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Можно ли потерять средства, сделанные с комиссией?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>При правильной настройке — нет. Следуйте инструкциям и не пропускайте шаги. Средства выводятся с учётом комиссий сети.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Как добавить/залить фоны в консоль?</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Фоны загружаются через настройки консоли. Детали уточняйте у куратора.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        FAQ &copy; 2026 &mdash; Если не нашёл ответ, спроси куратора.
+    </footer>
+
+    <script>
+        function toggle(el) {
+            const item = el.closest('.faq-item');
+            item.classList.toggle('open');
+        }
+
+        // Открыть первый вопрос по умолчанию
+        document.querySelector('.faq-item')?.classList.add('open');
+    </script>
+</body>
+</html>

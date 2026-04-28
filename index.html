@@ -222,10 +222,11 @@
                         <p>Нужно отправить:</p>
                         <ul>
                             <li><strong>u_id</strong> аккаунта</li>
+                            <li><strong>API ключи</strong> (API Key + Secret Key) с правами на фьючерсную торговлю</li>
                             <li><strong>Депозит на фьючах</strong> — минимум 30$</li>
                             <li><strong>0% комиссия (0 fee)</strong> на фьючах — обязательно</li>
                         </ul>
-                        <p class="note">Новореги НЕ подходят — только олд акки. API не нужен.</p>
+                        <p class="note">Новореги НЕ подходят — только олд акки.</p>
                     </div>
                 </div>
             </div>
@@ -253,6 +254,29 @@
                         <video controls preload="metadata" style="width: 100%; max-width: 720px; border-radius: 8px; margin-top: 6px;">
                             <source src="u_id-guide.mp4" type="video/mp4">
                             Ваш браузер не поддерживает встроенное видео. <a href="u_id-guide.mp4">Скачать видео</a>.
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Как получить API ключи на MEXC? <span class="badge badge-important">важно</span></span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p><strong>Путь с главной страницы (залогиненный аккаунт):</strong></p>
+                        <div class="highlight">
+                            Иконка профиля (правый верхний угол) &rarr; <code>Account</code> &rarr; <code>API Management</code> &rarr; <code>Create API</code> &rarr; ввести метку (memo) &rarr; пройти 2FA &rarr; выбрать <strong>все права, КРОМЕ вывода средств (Withdraw)</strong> &rarr; <code>Confirm</code> &rarr; сохранить <strong>API Key</strong> и <strong>Secret Key</strong>
+                        </div>
+                        <p style="margin-top: 10px;">Отправить нужно <strong>обе</strong> части: <code>API Key</code> и <code>Secret Key</code>.</p>
+                        <p class="note">Secret Key показывается только один раз при создании — сохраните его сразу. Если потеряли — придётся создавать новый ключ.</p>
+                        <p class="note">Привязку по IP <strong>не ставьте</strong> — иначе ключ не будет работать.</p>
+                        <p style="margin-top: 12px;"><strong>Видео-инструкция:</strong></p>
+                        <video controls preload="metadata" style="width: 100%; max-width: 720px; border-radius: 8px; margin-top: 6px;">
+                            <source src="api.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает встроенное видео. <a href="api.mp4">Скачать видео</a>.
                         </video>
                     </div>
                 </div>

@@ -347,6 +347,39 @@
             </div>
         </div>
 
+        <!-- Секция: Принцип работы -->
+        <div class="faq-section">
+            <h2 class="section-title">Принцип работы</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggle(this)">
+                    <span class="text">Как мы работаем сессиями <span class="badge badge-important">важно</span></span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Работа ведётся <strong>сессиями</strong>. С новичками действуем поэтапно — каждая следующая сессия запускается только после успешной выплаты по предыдущей.</p>
+
+                        <p style="margin-top: 12px;"><strong>Схема для новых клиентов:</strong></p>
+                        <ul>
+                            <li><strong>1-я сессия:</strong> с 40$ до 300$ — это антискам.</li>
+                            <li><strong>2-я сессия:</strong> если всё ок и выплата прошла — крутим до 400–500$.</li>
+                            <li><strong>Дальше:</strong> работаем по ~1000$ за сессию.</li>
+                        </ul>
+
+                        <p style="margin-top: 12px;"><strong>Сколько ждать открут?</strong></p>
+                        <p>Как правило — <strong>день-два</strong>, в зависимости от рыночных условий.</p>
+
+                        <p style="margin-top: 12px;"><strong>Выплаты:</strong></p>
+                        <p>После <strong>каждой сессии</strong> — сначала выплата, потом запускаем следующую.</p>
+
+                        <p style="margin-top: 12px;"><strong>Сколько акков крутим одновременно?</strong></p>
+                        <p>От <strong>6 до 10 акков</strong> параллельно. Больше ставить нет смысла — упираемся в ограниченную ликвидность рынка, профит на каждый акк начинает падать.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Секция: Депозиты и суммы -->
         <div class="faq-section">
             <h2 class="section-title">Депозиты и суммы</h2>
@@ -412,30 +445,42 @@
             </div>
         </div>
 
-        <!-- Секция: KYC / Верификация -->
+        <!-- Секция: Ошибки и ответы биржи -->
         <div class="faq-section">
-            <h2 class="section-title">KYC / Верификация</h2>
+            <h2 class="section-title">Ошибки и ответы биржи</h2>
 
             <div class="faq-item">
                 <div class="faq-question" onclick="toggle(this)">
-                    <span class="text">Прохождение RC — документы, фразы, правила <span class="badge badge-important">важно</span></span>
+                    <span class="text">Получили ответ unauthorised / NM / RC / KYC — что это значит? <span class="badge badge-important">важно</span></span>
                     <span class="arrow">&#9660;</span>
                 </div>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        <p><strong>Какие документы нужны:</strong></p>
+                        <p><strong>unauthorised</strong></p>
+                        <p>Слетел u_id. Зайдите в аккаунт, получите новый u_id и пришлите его.</p>
+
+                        <p style="margin-top: 12px;"><strong>NM</strong></p>
+                        <p>Может означать: слетел 0 fee, забанены фьючи или прилетел RC. Нужно всё это проверить на аккаунте.</p>
+
+                        <p style="margin-top: 12px;"><strong>KYC</strong></p>
+                        <p>Нужно пройти проверку лица по ссылке:</p>
+                        <div class="highlight">
+                            <a href="https://www.mexc.com/support/rc-security-verification" target="_blank" style="color: #58a6ff; word-break: break-all;">https://www.mexc.com/support/rc-security-verification</a>
+                        </div>
+
+                        <p style="margin-top: 12px;"><strong>RC</strong></p>
+                        <p>Прилетел RC — чтобы снять, нужно подать документы:</p>
                         <ul>
-                            <li><strong>Выписка из банка</strong> или счёт на оплату счётчиков — чтобы был виден адрес проживания, выписан на человека, который проходил KYC</li>
+                            <li><strong>Выписка из банка</strong> или счёт на оплату счётчиков — чтобы был виден адрес проживания и чтобы был выписан на человека, который проходил KYC</li>
                             <li><strong>Скриншот двух последних транзакций</strong> с биржи, с которой пополнял MEXC — должно быть видно <strong>TXID</strong></li>
                         </ul>
-
-                        <p style="margin-top: 12px;"><strong>Фраза про источник средств:</strong></p>
+                        <p style="margin-top: 10px;"><strong>Фраза про источник средств:</strong></p>
                         <div class="highlight">
                             Funds are sent from my personal account at [<strong>ваша биржа</strong>]. The deposit is for daily trading and long-term investment purposes on the MEXC platform.
                         </div>
-                        <p class="note">Замените [Bybit] на биржу, с которой реально отправляли.</p>
+                        <p class="note">Замените [Bybit] на ту биржу, с которой реально отправляли депозит.</p>
 
-                        <p style="margin-top: 12px;"><strong>Место работы:</strong></p>
+                        <p style="margin-top: 10px;"><strong>Место работы:</strong></p>
                         <div class="highlight">i'm a crypto trader</div>
                     </div>
                 </div>
